@@ -1,0 +1,209 @@
+/* Media Queries */
+html {
+  box-sizing: border-box; }
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit; }
+
+body {
+  font-family: "Raleway", sans-serif; }
+
+.contenedor {
+  margin: 0 auto;
+  max-width: 1100px; }
+
+.contenido-oculto {
+  display: none; }
+
+/* Site Header */
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between; }
+  header .logo {
+    padding: 1.6rem 0; }
+  header .carrito-compras {
+    position: relative; }
+    header .carrito-compras:hover .contenido-oculto {
+      background-color: #F1F1F1;
+      display: block;
+      max-width: 500px;
+      padding: 1rem;
+      position: absolute;
+      right: 0; }
+      header .carrito-compras:hover .contenido-oculto img {
+        max-width: 150px; }
+      header .carrito-compras:hover .contenido-oculto .boton {
+        background-color: #33C3F0;
+        color: white;
+        display: block;
+        margin-top: 1rem;
+        padding: .5rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        /* Mixin */ }
+
+/* Section 'hero': Main Image Site */
+.hero {
+  align-items: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  min-height: 24rem;
+  background-image: url("../img/hero.jpg");
+  background-position: center center;
+  background-repeat: no-repeat; }
+  .hero .contenido-hero {
+    flex: 1; }
+    .hero .contenido-hero h2 {
+      font-size: 2.4rem;
+      font-weight: 400; }
+    .hero .contenido-hero p {
+      font-size: 1.2rem; }
+    .hero .contenido-hero form {
+      position: relative; }
+      @media only screen and (min-width: 768px) {
+        .hero .contenido-hero form {
+          width: 40%; } }
+      .hero .contenido-hero form input {
+        margin: 0;
+        padding: 0; }
+      .hero .contenido-hero form input[type='text'] {
+        height: 3rem;
+        width: 100%; }
+      .hero .contenido-hero form input[type='submit'] {
+        border: none;
+        cursor: pointer;
+        height: 3rem;
+        position: absolute;
+        right: 0;
+        text-indent: -99999px;
+        top: 0;
+        width: 3rem;
+        background-image: url("../img/lupa.png");
+        background-position: center center;
+        background-repeat: no-repeat; }
+
+/* Section 'barra': Content Bar */
+.barra {
+  align-items: center;
+  color: white;
+  display: flex;
+  min-height: 15rem;
+  background: linear-gradient(to right, #741D51 0%, #E44E52 100%);
+  /* 'linear-gradient' solo funciona con la propiedad 'background' */ }
+  @media only screen and (min-width: 1024px) {
+    .barra {
+      min-height: 7rem; } }
+  .barra .iconos {
+    display: flex;
+    flex: 1;
+    flex-direction: column; }
+    @media only screen and (min-width: 1024px) {
+      .barra .iconos {
+        flex-direction: row; } }
+    .barra .iconos .icono {
+      background-position: 4% center !important;
+      background-size: 2.6rem;
+      flex: 1;
+      text-align: center; }
+      @media only screen and (min-width: 768px) {
+        .barra .iconos .icono {
+          background-position: 20% center !important; } }
+      @media only screen and (min-width: 1024px) {
+        .barra .iconos .icono {
+          background-position: left center !important; } }
+      .barra .iconos .icono.icono1 {
+        background-image: url("../img/icono1.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        /* background-position: left center */ }
+      .barra .iconos .icono.icono2 {
+        background-image: url("../img/icono2.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        /* background-position: left center */ }
+      .barra .iconos .icono.icono3 {
+        background-image: url("../img/icono3.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        /* background-position: left center */ }
+
+/* Section 'cursos': Courses */
+.encabezado {
+  text-align: center; }
+
+.cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* Card: Course */ }
+  .cursos .curso {
+    border: 1px solid #d9d9d9;
+    flex: 0 1 calc( 50% - 1rem);
+    margin-bottom: 1rem; }
+    @media only screen and (min-width: 768px) {
+      .cursos .curso {
+        flex: 0 1 calc( 33% - 1rem); } }
+    @media only screen and (min-width: 1024px) {
+      .cursos .curso {
+        flex: 0 1 calc( 25% - 1rem); } }
+    .cursos .curso .imagen-curso {
+      width: 100%; }
+
+/* Info Card: Course */
+.info-curso {
+  padding: .8rem; }
+  .info-curso h4 {
+    font-size: 1.2rem;
+    margin: 0; }
+  .info-curso .precio {
+    display: flex;
+    justify-content: space-between; }
+    .info-curso .precio .regular {
+      color: red;
+      text-decoration: line-through; }
+    .info-curso .precio .oferta {
+      color: green;
+      font-size: 1.6rem;
+      font-weight: 500; }
+  .info-curso .boton {
+    background-color: #741D51;
+    color: white;
+    display: block;
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    /* Mixin */ }
+
+/* Site Footer */
+footer {
+  border-top: 1px solid #d9d9d9;
+  margin-top: 1rem;
+  padding-top: 2rem; }
+  footer .contenedor-footer {
+    display: flex;
+    flex-direction: column; }
+    @media only screen and (min-width: 480px) {
+      footer .contenedor-footer {
+        flex-direction: row; } }
+
+/* Menu */
+.menu, .navegacion {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 1.5rem; }
+  @media only screen and (min-width: 768px) {
+    .menu, .navegacion {
+      flex: 0 1 calc( 30% - 1rem); } }
+  .menu a, .navegacion a {
+    color: black;
+    margin-bottom: .5rem;
+    text-decoration: none; }
+
+.navegacion a {
+  color: #33C3F0; }

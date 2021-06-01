@@ -1,0 +1,25 @@
+// Fuentes
+$principal-font                : 'Raleway', sans-serif;
+// Colores
+$principal                     : #33C3F0;
+$secundario                    : #741D51;
+$terciario                     : #E44E52;
+
+$blanco                        : white;
+$gris                          : #F2F2F2;
+$verde                         : green;
+$rojo                          : red;
+$negro                         : black;
+
+$bg-content-carrito-compras    : #F1F1F1;
+$bg-btn-carrito-compras        : $principal;
+$color-btn-carrito-compras     : $blanco;
+
+// Dimensiones
+$max-width-content             : 1100px;
+$max-width-hide-content        : 500px;
+$max-width-img-carrito-compras : 150px;
+// Media Queries
+$phone                         : 480px;
+$tablet                        : 768px;
+$desktop                       : 1024px;

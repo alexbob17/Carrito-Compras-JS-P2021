@@ -1,0 +1,44 @@
+// Personalización de Botones
+@mixin boton( $bgColor, $fontColor ) {
+   background-color: $bgColor;
+   color: $fontColor;
+   display: block;
+   margin-top: 1rem;
+   padding: .5rem 1rem;
+   text-align: center;
+   text-decoration: none;
+}
+
+// Personalización de propiedad 'box-sizing'
+@mixin box-sizing( $box-model ) {
+   box-sizing: $box-model;
+}
+
+// Personalización imagen de fondo
+@mixin background-image( $image ) {
+   background-image: url( $image );
+   background-position: center center;
+   background-repeat: no-repeat;
+}
+
+// Personalización degradado
+@mixin gradient( $initialColor, $finalColor ) {
+   background: linear-gradient( to right, $initialColor 0%, $finalColor 100% );
+   /* 'linear-gradient' solo funciona con la propiedad 'background' */
+}
+
+/* Media Queries */
+@mixin mqPhone {
+   @media only screen and ( min-width: #{ $phone } ) {
+      @content;
+   }
+}
+@mixin mqTablet {
+   @media only screen and ( min-width: #{ $tablet } ) {
+      @content;
+   }
+}@mixin mqDesktop {
+   @media only screen and ( min-width: #{ $desktop } ) {
+      @content;
+   }
+}

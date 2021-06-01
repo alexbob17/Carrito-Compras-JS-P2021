@@ -1,0 +1,245 @@
+
+html {
+   @include box-sizing( border-box );
+}
+*,
+*:after,
+*:before {
+   @include box-sizing( inherit );
+}
+
+body {
+   font-family: $principal-font;
+}
+
+.contenedor {
+   margin: 0 auto;
+   max-width: $max-width-content;
+}
+.contenido-oculto {
+   display: none;
+}
+
+/* Site Header */
+header {
+   align-items: center;
+   display: flex;
+   justify-content: space-between;
+
+   .logo {
+      padding: 1.6rem 0;
+   }
+   .carrito-compras {
+      position: relative;
+
+      &:hover .contenido-oculto {
+         background-color: $bg-content-carrito-compras;
+         display: block;
+         max-width: $max-width-hide-content;
+         padding: 1rem;
+         position: absolute;
+         right: 0;
+
+         img {
+            max-width: $max-width-img-carrito-compras;
+         }
+         .boton {
+            @include boton( $principal, $color-btn-carrito-compras );    /* Mixin */
+         }
+      }
+   }
+}
+
+/* Section 'hero': Main Image Site */
+.hero {
+   align-items: center;
+   background-size: cover;
+   color: $blanco;
+   display: flex;
+   min-height: 24rem;
+   @include background-image( '../img/hero.jpg' );
+
+   .contenido-hero {
+      flex: 1;
+
+      h2 {
+         font-size: 2.4rem;
+         font-weight: 400;
+      }
+      p {
+         font-size: 1.2rem;
+      }
+      form {
+         position: relative;
+
+         @include mqTablet() {
+            width: 40%;
+         }
+
+         input {
+            margin: 0;
+            padding: 0;
+         }
+         input[type='text'] {
+            height: 3rem;
+            width: 100%;
+         }
+         input[type='submit'] {
+            border: none;
+            cursor: pointer;
+            height: 3rem;
+            position: absolute;
+            right: 0;
+            text-indent: -99999px;
+            top: 0;
+            width: 3rem;
+            @include background-image( '../img/lupa.png' );
+         }
+      }
+   }
+}
+
+/* Section 'barra': Content Bar */
+.barra {
+   align-items: center;
+   color: $blanco;
+   display: flex;
+   min-height: 15rem;
+   @include gradient( $secundario, $terciario );
+   @include mqDesktop() {
+      min-height: 7rem;
+   }
+
+   .iconos {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      @include mqDesktop() {
+         flex-direction: row;
+      }
+
+      .icono {
+         background-position: 4% center !important;
+         background-size: 2.6rem;
+         flex: 1;
+         text-align: center;
+         @include mqTablet() {
+            background-position: 20% center !important;
+         }
+         @include mqDesktop() {
+            background-position: left center !important;
+         }
+
+         &.icono1 {
+            @include background-image( '../img/icono1.png' );
+            /* background-position: left center */
+         }
+         &.icono2 {
+            @include background-image( '../img/icono2.png' );
+            /* background-position: left center */
+         }
+
+         &.icono3 {
+            @include background-image( '../img/icono3.png' );
+            /* background-position: left center */
+         }
+      }
+   }
+}
+
+/* Section 'cursos': Courses */
+.encabezado {
+   text-align: center;
+}
+.cursos {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+
+   /* Card: Course */
+   .curso {
+      border: 1px solid darken( $gris, 10 );
+      flex: 0 1 calc( 50% - 1rem );
+      margin-bottom: 1rem;
+
+      @include mqTablet() {
+         flex: 0 1 calc( 33% - 1rem );
+      }
+      @include mqDesktop() {
+         flex: 0 1 calc( 25% - 1rem );
+      }
+
+      .imagen-curso {
+         width: 100%;
+      }
+   }
+}
+
+/* Info Card: Course */
+.info-curso {
+   padding: .8rem;
+
+   h4 {
+      font-size: 1.2rem;
+      margin: 0;
+   }
+   .precio {
+      display: flex;
+      justify-content: space-between;
+
+      .regular {
+         color: $rojo;
+         text-decoration: line-through;
+      }
+      .oferta {
+         color: $verde;
+         font-size: 1.6rem;
+         font-weight: 500;
+      }
+   }
+   .boton {
+      @include boton( $secundario, $blanco );    /* Mixin */
+   }
+}
+
+
+/* Site Footer */
+footer {
+   border-top: 1px solid darken( $gris, 10 );
+   margin-top: 1rem;
+   padding-top: 2rem;
+
+   .contenedor-footer {
+      display: flex;
+      flex-direction: column;
+
+      @include  mqPhone() {
+         flex-direction: row;
+      }
+   }
+}
+/* Menu */
+.menu {
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   margin-bottom: 1.5rem;
+
+   @include mqTablet() {
+      flex: 0 1 calc( 30% - 1rem );
+   }
+
+   a {
+      color: $negro;
+      margin-bottom: .5rem;
+      text-decoration: none
+   }
+}
+
+.navegacion {
+   @extend .menu;
+
+   a {
+      color: $principal;
+   }
+}
